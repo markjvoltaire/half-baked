@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import AuthForm from '../components/AuthForm';
 import { signInUser, signupUser } from '../services/users';
+import classNames from 'classnames';
 
 export default function SignIn({ setCurrentUser }) {
   const [email, setEmail] = useState('');
@@ -33,6 +34,7 @@ export default function SignIn({ setCurrentUser }) {
           onClick={() => {
             setType('signin');
           }}
+          className={classNames({ active: type === 'signin' })}
         >
           {' '}
           Sign In
@@ -42,6 +44,7 @@ export default function SignIn({ setCurrentUser }) {
           onClick={() => {
             setType('signup');
           }}
+          className={classNames({ active: type === 'signup' })}
         >
           {' '}
           Sign Up
