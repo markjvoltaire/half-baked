@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import AuthForm from '../components/AuthForm';
 import { signInUser, signupUser } from '../services/users';
 
-export default function SignIn() {
+export default function SignIn({ setCurrentUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -18,7 +18,7 @@ export default function SignIn() {
       } else {
         resp = await signupUser(email, password);
       }
-      // type === 'signin' ? await signInUser(email, password) : await signupUser(email, password);
+      setCurrentUser();
       console.log(resp);
     } catch (error) {
       //   console.log(error);
