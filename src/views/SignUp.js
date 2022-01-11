@@ -13,13 +13,15 @@ export default function SignUp() {
       let resp;
       resp = await signupUser(email, password);
       console.log(resp);
-    } catch {
+    } catch (error) {
+      console.log(error);
       setErrorMessage('Sorry Try Again');
     }
   };
 
   return (
     <div>
+      <h1>Sign up</h1>
       <AuthForm
         email={email}
         setEmail={setEmail}
