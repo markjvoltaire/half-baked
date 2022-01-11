@@ -4,7 +4,7 @@ import AuthForm from '../components/AuthForm';
 import { signInUser, signupUser } from '../services/users';
 import classNames from 'classnames';
 
-export default function SignIn({ setCurrentUser }) {
+export default function Auth({ setCurrentUser }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -19,8 +19,7 @@ export default function SignIn({ setCurrentUser }) {
       } else {
         resp = await signupUser(email, password);
       }
-      setCurrentUser();
-      console.log(resp);
+      setCurrentUser(resp);
     } catch (error) {
       //   console.log(error);
       setErrorMessage('Sorry Try Again');

@@ -10,8 +10,6 @@ function App() {
     setCurrentUser(null);
   };
 
-  console.log('The Current User is:', currentUser);
-
   return (
     <div className="App">
       <BrowserRouter>
